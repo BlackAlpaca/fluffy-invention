@@ -4,19 +4,19 @@ using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 
+
 namespace Assets.Scripts
 {
     public class CarDriver : MonoBehaviour
     {
 
-
+        private Hand hand;
         private SteamVR_TrackedObject trackedObject;
         public List<AxleInfo> axleInfos;
         public float maxMotorTorque;
         public float maxSteeringAngle;
         public float brakeTorque;
         public float decelerationForce;
-        private Hand hand;
 
         public void ApplyLocalPositionToVisuals(AxleInfo axleInfo)
         {
@@ -32,9 +32,16 @@ namespace Assets.Scripts
 
         void FixedUpdate()
         {
-            hand = GetComponent<Hand>();
-            float motor = maxMotorTorque * GetComponent<Hand>();
+
+            float motor = maxMotorTorque * ViveInput.GetAxis(HandRole.RightHand, ControllerAxis.Trigger);
             float steering = maxSteeringAngle * ViveInput.GetAxis(HandRole.LeftHand, ControllerAxis.Trigger);
+
+            hand = GetComponent<Hand>();
+
+           
+            //float motor = maxMotorTorque * Input.GetAxis("Axis9");
+            //float steering = maxSteeringAngle * Input.GetAxis("Axis10");
+
             for (int i = 0; i < axleInfos.Count; i++)
             {
                 if (axleInfos[i].steering)
