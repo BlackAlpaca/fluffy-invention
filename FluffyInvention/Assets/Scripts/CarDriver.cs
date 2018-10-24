@@ -1,15 +1,22 @@
 ﻿using System.Collections.Generic;
+using HTC.UnityPlugin.Vive;
 using UnityEngine;
+using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 namespace Assets.Scripts
 {
-    public class CarDriver : MonoBehaviour {
+    public class CarDriver : MonoBehaviour
+    {
 
+
+        private SteamVR_TrackedObject trackedObject;
         public List<AxleInfo> axleInfos;
         public float maxMotorTorque;
         public float maxSteeringAngle;
         public float brakeTorque;
         public float decelerationForce;
+        private Hand hand;
 
         public void ApplyLocalPositionToVisuals(AxleInfo axleInfo)
         {
@@ -25,8 +32,9 @@ namespace Assets.Scripts
 
         void FixedUpdate()
         {
-            float motor = maxMotorTorque * Input.GetAxis("Vertical");
-            float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
+            hand = GetComponent<Hand>();
+            float motor = maxMotorTorque * GetComponent<Hand>();
+            float steering = maxSteeringAngle * ViveInput.GetAxis(HandRole.LeftHand, ControllerAxis.Trigger);
             for (int i = 0; i < axleInfos.Count; i++)
             {
                 if (axleInfos[i].steering)
