@@ -13,6 +13,8 @@ namespace Assets.Scripts
         private Hand hand;
         private SteamVR_TrackedObject trackedObject;
         public List<AxleInfo> axleInfos;
+        public LinearMapping LinearMapping;
+        public GameObject steeringWheel;
         public float maxMotorTorque;
         public float maxSteeringAngle;
         public float brakeTorque;
@@ -33,8 +35,12 @@ namespace Assets.Scripts
         void FixedUpdate()
         {
 
-            float motor = maxMotorTorque * ViveInput.GetAxis(HandRole.RightHand, ControllerAxis.Trigger);
-            float steering = maxSteeringAngle * ViveInput.GetAxis(HandRole.LeftHand, ControllerAxis.Trigger);
+
+            float motor = 0f; //maxMotorTorque * LinearMapping.value * 100;
+            Debug.Log(LinearMapping.value);
+            float steering = 0f;//maxSteeringAngle * steeringWheel.transform.rotation.eulerAngles.x;
+            Debug.Log(steering);
+
 
             hand = GetComponent<Hand>();
 

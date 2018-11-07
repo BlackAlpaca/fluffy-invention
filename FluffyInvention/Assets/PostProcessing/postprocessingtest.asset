@@ -97,34 +97,34 @@ MonoBehaviour:
       logMin: -5
       logMax: 4
   bloom:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       bloom:
-        intensity: 0
+        intensity: 14.1
         threshold: 1.1
-        softKnee: 0.5
-        radius: 4
+        softKnee: 0.426
+        radius: 5.16
         antiFlicker: 0
       lensDirt:
         texture: {fileID: 0}
         intensity: 3
   colorGrading:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       tonemapping:
         tonemapper: 2
-        neutralBlackIn: 0.0398
-        neutralWhiteIn: 10
+        neutralBlackIn: 0.0315
+        neutralWhiteIn: 9.53
         neutralBlackOut: 0
-        neutralWhiteOut: 10
-        neutralWhiteLevel: 5.3
+        neutralWhiteOut: 7.4
+        neutralWhiteLevel: 2.35
         neutralWhiteClip: 10
       basic:
         postExposure: 0
-        temperature: 0
-        tint: 0
+        temperature: 17.3
+        tint: 50.4
         hueShift: 0
-        saturation: 1
+        saturation: 1.272
         contrast: 1
       channelMixer:
         red: {x: 1, y: 0, z: 0}
@@ -134,13 +134,13 @@ MonoBehaviour:
       colorWheels:
         mode: 1
         log:
-          slope: {r: 1, g: 1, b: 1, a: 0}
-          power: {r: 1, g: 1, b: 1, a: 0}
-          offset: {r: 1, g: 1, b: 1, a: 0}
+          slope: {r: 1, g: 0.6617752, b: 0.956532, a: 0}
+          power: {r: 0.5803416, g: 1, b: 0.39947695, a: 0}
+          offset: {r: 0.8281662, g: 0.7038022, b: 1, a: 0}
         linear:
-          lift: {r: 0, g: 0, b: 0, a: 0}
-          gamma: {r: 0, g: 0, b: 0, a: 0}
-          gain: {r: 0, g: 0, b: 0, a: 0}
+          lift: {r: 1, g: 1, b: 1, a: 0}
+          gamma: {r: 1, g: 1, b: 1, a: 0}
+          gain: {r: 1, g: 1, b: 1, a: 0}
       curves:
         master:
           curve:
@@ -157,7 +157,7 @@ MonoBehaviour:
               outWeight: 0
             - serializedVersion: 3
               time: 1
-              value: 1
+              value: 0.99122804
               inSlope: 1
               outSlope: 1
               tangentMode: 0
