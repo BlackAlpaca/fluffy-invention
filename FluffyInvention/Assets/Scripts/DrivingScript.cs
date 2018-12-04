@@ -23,6 +23,7 @@ public class DrivingScript : MonoBehaviour
     public float maxSteeringAngle;
     public List<DrivingScript_Controller> truck_Infos;
     public LinearMapping _LinearMapping;
+    public GameObject steeringWheel;
 
     public void VisualizeWheel(DrivingScript_Controller wheelPair)
     {
@@ -40,6 +41,7 @@ public class DrivingScript : MonoBehaviour
     {
 
         Debug.Log(_LinearMapping.value);
+        Debug.Log(steeringWheel.transform.rotation);
 
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
