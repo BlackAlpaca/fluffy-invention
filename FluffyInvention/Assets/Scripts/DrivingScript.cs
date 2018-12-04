@@ -45,7 +45,7 @@ public class DrivingScript : MonoBehaviour
         Debug.Log(steeringWheel.transform.rotation.eulerAngles);
 
         float motor = maxMotorTorque * _LinearMapping.value;
-        float steering = maxSteeringAngle * steeringWheel.transform.rotation.y;
+        float steering = maxSteeringAngle * 0;
         float brakeTorque = Mathf.Abs(Input.GetAxis("Jump"));
         if (brakeTorque > 0.001)
         {
