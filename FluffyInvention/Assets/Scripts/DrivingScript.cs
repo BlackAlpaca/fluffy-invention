@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Valve.VR.InteractionSystem;
 
 
@@ -40,6 +41,11 @@ public class DrivingScript : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Debug.Log("R pressed");
+            SceneManager.LoadScene("MainScene");
+        }
 
         Debug.Log(_LinearMapping.value);
         Debug.Log(steeringWheel.transform.rotation.eulerAngles);
