@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionScript : MonoBehaviour
 {
@@ -23,6 +24,13 @@ public class CollisionScript : MonoBehaviour
         if (collision.gameObject.tag == "Tree")
         {
             SmokeParticle.Play();
+
+            //Maybe show some UI before restarting the game
+            Invoke("Restart", 3.0f);
         }
+    }
+    void Restart()
+    {
+        SceneManager.LoadScene("MainScene");
     }
 }
