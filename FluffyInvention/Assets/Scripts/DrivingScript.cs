@@ -47,16 +47,19 @@ public class DrivingScript : MonoBehaviour
             SceneManager.LoadScene("MainScene");
         }
 
-        float lmValue = _LinearMapping.value / 2;
+        float lmValue = _LinearMapping.value;
 
         if (lmValue > 0.5f)
         {
-            lmValue = -((lmValue - 0.5f) * 2);
+            lmValue = lmValue - 0.5f;
         }
         else
         {
-            lmValue = 1 - (lmValue * 2);
+            lmValue = - (1.0f - lmValue);
         }
+
+
+        Debug.Log(_LinearMapping.value + " - LMval: " + lmValue);
 
         float motor = maxMotorTorque * lmValue;
         float steering = maxSteeringAngle * gameObject.transform.localRotation.y;
