@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 
 [System.Serializable]
@@ -21,6 +22,7 @@ public class DrivingScript : MonoBehaviour
     public float maxMotorTorque;
     public float maxSteeringAngle;
     public List<DrivingScript_Controller> truck_Infos;
+    public LinearMapping _LinearMapping;
 
     public void VisualizeWheel(DrivingScript_Controller wheelPair)
     {
@@ -36,6 +38,9 @@ public class DrivingScript : MonoBehaviour
 
     public void Update()
     {
+
+        Debug.Log(_LinearMapping.value);
+
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
         float brakeTorque = Mathf.Abs(Input.GetAxis("Jump"));
