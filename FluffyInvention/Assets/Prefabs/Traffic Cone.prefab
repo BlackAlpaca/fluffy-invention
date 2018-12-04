@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23785841688887512}
   - component: {fileID: 54084394880475574}
   - component: {fileID: 65858855249498730}
+  - component: {fileID: 114362107949951014}
   m_Layer: 0
   m_Name: Traffic Cone
   m_TagString: Untagged
@@ -112,3 +113,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.525202, y: 0.5252021, z: 0.98366725}
   m_Center: {x: 0, y: 0, z: 0.49183464}
+--- !u!114 &114362107949951014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1537461542799834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb4fba019d93eca41ae371f75a89d1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
