@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PostProcessing;
 using UnityEngine.SceneManagement;
 using Valve.VR.InteractionSystem;
 
@@ -25,6 +26,9 @@ public class DrivingScript : MonoBehaviour
     public List<DrivingScript_Controller> truck_Infos;
     public LinearMapping _LinearMapping;
     public GameObject steeringWheel;
+    public GameObject vrCamera;
+    
+    public bool IsOnDrunkMode;
 
     public void VisualizeWheel(DrivingScript_Controller wheelPair)
     {
@@ -47,6 +51,22 @@ public class DrivingScript : MonoBehaviour
             SceneManager.LoadScene("MainScene");
         }
 
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            IsOnDrunkMode = !IsOnDrunkMode;
+            var behaviour = vrCamera.GetComponent(typeof(PostProcessingBehaviour)) as PostProcessingBehaviour;
+
+            if (behaviour != null)
+            {
+                behaviour.enabled = IsOnDrunkMode;
+            }
+        }
+
+       
+        //var postprocessingBehaviour = gameObject.GetComponent<PostProcessingBehaviour>();
+        //postprocessingBehaviour.enabled = IsOnDrunkMode ? true : false;
+
+
         float lmValue = _LinearMapping.value;
 
         if (lmValue > 0.5f)
@@ -62,7 +82,7 @@ public class DrivingScript : MonoBehaviour
         Debug.Log(_LinearMapping.value + " - LMval: " + lmValue);
 
         float motor = maxMotorTorque * lmValue;
-        float steering = maxSteeringAngle * gameObject.transform.localRotation.y;
+        float steering = maxSteeringAngle * steeringWheel.transform.localRotation.y;
         float brakeTorque = Mathf.Abs(Input.GetAxis("Jump"));
         if (brakeTorque > 0.001)
         {

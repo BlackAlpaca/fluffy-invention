@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -222,6 +222,8 @@ MonoBehaviour:
     reverseTurn: 0
   _LinearMapping: {fileID: 2036895462}
   steeringWheel: {fileID: 1349981753}
+  vrCamera: {fileID: 237619797}
+  IsOnDrunkMode: 0
 --- !u!54 &41257407
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -246,7 +248,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 41257405}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.17, y: 5.32, z: 5.27}
+  m_LocalPosition: {x: -2.17, y: 5.34, z: 5.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 523918122}
@@ -383,6 +385,23 @@ Transform:
   m_Father: {fileID: 41257408}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &237619797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 125964, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1900725526}
+--- !u!114 &237619803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 237619797}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 8fe4de5cbc1618b41b53c63adeffb290, type: 2}
 --- !u!1 &241500058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,9 +1681,9 @@ GameObject:
   - component: {fileID: 1349981754}
   - component: {fileID: 1349981759}
   - component: {fileID: 1349981758}
-  - component: {fileID: 1349981757}
   - component: {fileID: 1349981756}
   - component: {fileID: 1349981755}
+  - component: {fileID: 1349981757}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -1754,21 +1773,18 @@ MonoBehaviour:
   handFollowTransformRotation: 1
   highlightOnHover: 1
   hideHighlight: []
---- !u!64 &1349981757
-MeshCollider:
+--- !u!65 &1349981757
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 64875012835660188, guid: 18c1a90668c7e9840a496cea62241c39,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1349981753}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 2.0000012, z: 1.0000002}
+  m_Center: {x: 0.0000019669533, y: -7.81597e-14, z: -0.00000008940697}
 --- !u!23 &1349981758
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2002,7 +2018,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.921
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 2}
       propertyPath: m_LocalPosition.z
