@@ -24,6 +24,6 @@ public class ButtonTapped : MonoBehaviour {
         {
             Debug.Log("Pressed");
             source = GetComponent<AudioSource>();
-            source.PlayOneShot(tuut, 10);
+            source.PlayOneShot(tuut, 100);
         }
 }
