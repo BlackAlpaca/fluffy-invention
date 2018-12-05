@@ -5,8 +5,7 @@ using Valve.VR.InteractionSystem;
 
 public class ButtonTapped : MonoBehaviour {
 
-    public AudioClip tuut;
-    private AudioSource source;
+    private AudioSource tuut;
 
 
     public void OnButtonDown(Hand fromHand)
@@ -17,13 +16,16 @@ public class ButtonTapped : MonoBehaviour {
 
         public void OnButtonUp(Hand fromHand)
         {
-           
+            if (tuut.isPlaying)
+            {
+                tuut.Stop();
+                Debug.Log("StoppedPlaying");
+        }
         }
 
         private void PressedMethod()
         {
             Debug.Log("Pressed");
-            source = GetComponent<AudioSource>();
-            source.PlayOneShot(tuut, 100);
+            tuut.Play();
         }
 }

@@ -2966,14 +2966,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  minAngle: -90
+  minAngle: -45
   freezeOnMin: 1
   onMinAngle:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  maxAngle: 90
+  maxAngle: 45
   freezeOnMax: 1
   onMaxAngle:
     m_PersistentCalls:
@@ -3059,7 +3059,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d21810444f676549a0a7cf665c80297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tuut: {fileID: 8300000, guid: 2b2afbae5aa2eda42867adf518d22b85, type: 3}
 --- !u!114 &114626276689333914
 MonoBehaviour:
   m_ObjectHideFlags: 1

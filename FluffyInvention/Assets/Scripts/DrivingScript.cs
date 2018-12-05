@@ -79,7 +79,7 @@ public class DrivingScript : MonoBehaviour
         }
 
 
-        Debug.Log(_LinearMapping.value + " - LMval: " + lmValue);
+        //Debug.Log(_LinearMapping.value + " - LMval: " + lmValue);
 
         float motor = maxMotorTorque * lmValue;
         float steering = maxSteeringAngle * steeringWheel.transform.localRotation.y;
