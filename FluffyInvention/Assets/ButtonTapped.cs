@@ -5,7 +5,11 @@ using Valve.VR.InteractionSystem;
 
 public class ButtonTapped : MonoBehaviour {
 
-        public void OnButtonDown(Hand fromHand)
+    public AudioClip tuut;
+    private AudioSource source;
+
+
+    public void OnButtonDown(Hand fromHand)
         {
             PressedMethod();
             fromHand.TriggerHapticPulse(1000);
@@ -19,5 +23,7 @@ public class ButtonTapped : MonoBehaviour {
         private void PressedMethod()
         {
             Debug.Log("Pressed");
+            source = GetComponent<AudioSource>();
+            source.PlayOneShot(tuut, 10);
         }
 }
