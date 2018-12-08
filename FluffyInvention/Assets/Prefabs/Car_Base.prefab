@@ -2916,12 +2916,12 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.9245283, g: 0.9163505, b: 0.38812745, a: 1}
-  m_Intensity: 10
+  m_Intensity: 5
   m_Range: 50
   m_SpotAngle: 100
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -2953,12 +2953,12 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.9245283, g: 0.9163505, b: 0.38812745, a: 1}
-  m_Intensity: 10
+  m_Intensity: 5
   m_Range: 50
   m_SpotAngle: 100
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
