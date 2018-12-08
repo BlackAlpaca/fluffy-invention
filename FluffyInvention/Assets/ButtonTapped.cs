@@ -5,7 +5,7 @@ using Valve.VR.InteractionSystem;
 
 public class ButtonTapped : MonoBehaviour {
 
-    private AudioSource tuut;
+    public AudioSource tuut;
 
 
     public void OnButtonDown(Hand fromHand)
@@ -28,4 +28,12 @@ public class ButtonTapped : MonoBehaviour {
             Debug.Log("Pressed");
             tuut.Play();
         }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            PressedMethod();
+        }
+    }
 }

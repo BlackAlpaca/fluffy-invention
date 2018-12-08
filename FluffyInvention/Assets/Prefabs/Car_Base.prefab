@@ -482,7 +482,7 @@ GameObject:
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
@@ -3059,6 +3059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d21810444f676549a0a7cf665c80297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tuut: {fileID: 0}
 --- !u!114 &114626276689333914
 MonoBehaviour:
   m_ObjectHideFlags: 1
